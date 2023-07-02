@@ -4,7 +4,7 @@
 const cells = document.querySelectorAll('[data-cell]');
 const gameStatus = document.getElementById('gameStatus');
 const endGameStatus = document.getElementById('endGameStatus');
-const playerOne = 'X';const playerTwo = 'O';
+const playerOne = 'X'; const playerTwo = 'O';
 let playerTurn = playerOne;
 
 /**
@@ -13,7 +13,8 @@ let playerTurn = playerOne;
 const nom = localStorage.getItem('name');
 const difficulter = localStorage.getItem('dificulty');
 const joueurType = localStorage.getItem('playerType');
-const aiPlayer = joueurType === playerOne ? playerTwo : playerOne;
+console.log("stat:" + joueurType);
+const aiPlayer = joueurType === playerTwo ? playerTwo : playerOne;
 document.getElementById('stat').textContent = aiPlayer;
 
 // const csvFile = "morpion.csv";
