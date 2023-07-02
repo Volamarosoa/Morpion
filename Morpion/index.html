@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/index.css">
+    <title>Morpion</title>
+</head>
+<body>
+    <div id="content" class="content">
+        <p class="header">
+            <h2 class="title"> 
+                Morpion game
+            </h2>
+        </p>
+        <form action="morpion.html" method="post" id="morpionForm">
+            <input type="text" name="nom" id="name" placeholder="Enter your name">
+            <select name="dificulty" id="dificulty" >
+                <option value="#">Choose the difficulty</option>
+                <option value="easy">easy</option>
+                <option value="normal">normal</option>
+                <option value="hard" >hard</option>
+            </select>
+            <select name="playerType" id="playerType" class="playerType">
+                <option value="#">Choosing the pawn type</option>
+                <option value="playerOne">X</option>
+                <option value="playerTwo">O</option>
+            </select>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>
+<script>
+    const form = document.getElementById('morpionForm'); 
+    form.addEventListener('submit', function (event) {
+    event.preventDefault(); 
+
+    const nom = document.getElementById('name').value;
+    const selectDificulter = document.getElementById('dificulty') ;
+    const selectPlayerType = document.getElementById('playerType') ;
+    const valueDificulter = selectDificulter.value ;
+    const valuePlayerType = selectPlayerType.value ;
+
+    localStorage.setItem('name', nom);
+    localStorage.setItem('dificulty', valueDificulter);
+    localStorage.setItem('playerType', valuePlayerType);
+
+    window.location.href = 'morpion.html';
+    });
+</script>
